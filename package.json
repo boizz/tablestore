@@ -1,0 +1,30 @@
+{
+  "name": "tablestore-js",
+  "version": "1.0.0",
+  "description": "Aliyun TableStore SDK for JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec --recursive -t=1000000 -r intelli-espower-loader",
+    "cover": "nyc mocha --recursive -t=1000000 -r intelli-espower-loader"
+  },
+  "keywords": [
+    "aliyun",
+    "tablestore",
+    "javascript"
+  ],
+  "author": "Aron <bon.hoo@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tablestore": "^4.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "power-assert": "^1.6.1",
+    "proxyquire": "^2.1.1"
+  }
+}
