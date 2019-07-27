@@ -1,4 +1,6 @@
 ## 什么是表格存储
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fboizz%2Ftablestore.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fboizz%2Ftablestore?ref=badge_shield)
+
 
 表格存储（Table Store）是阿里云自研的 NoSQL 多模型数据库，提供海量结构化数据存储以及快速的查询和分析服务。表格存储的分布式存储和强大的索引引擎能够支持PB级存储、千万 TPS 以及毫秒级延迟的服务能力。
 
@@ -645,3 +647,6 @@ const res = await tj.search(TABLE_NAME)
     queryType: QueryType.MATCH_ALL_QUERY,
   }]);
 ```
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fboizz%2Ftablestore.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fboizz%2Ftablestore?ref=badge_large)
