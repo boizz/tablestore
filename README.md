@@ -1,16 +1,15 @@
 [![Build Status](https://travis-ci.org/boizz/tablestore.svg?branch=master)](https://travis-ci.org/boizz/tablestore)
-[![Coverage Status](https://coveralls.io/repos/github/boizz/tablestore/badge.svg?branch=master)](https://coveralls.io/github/boizz/tablestore?branch=master)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fboizz%2Ftablestore.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fboizz%2Ftablestore?ref=badge_shield)
 [![NPM Package](https://img.shields.io/npm/v/tablestore-js.svg?style=flat-square)](https://www.npmjs.org/package/tablestore-js)
 [![NPM Downloads](https://img.shields.io/npm/dm/tablestore-js.svg?style=flat-square)](https://npmjs.org/package/tablestore-js)
 
 ## 什么是表格存储
 
-表格存储（Table Store）是阿里云自研的 NoSQL 多模型数据库，提供海量结构化数据存储以及快速的查询和分析服务。表格存储的分布式存储和强大的索引引擎能够支持PB级存储、千万 TPS 以及毫秒级延迟的服务能力。
+表格存储（Table Store）是阿里云自研的 NoSQL 多模型数据库，提供海量结构化数据存储以及快速的查询和分析服务。表格存储的分布式存储和强大的索引引擎能够支持 PB 级存储、千万 TPS 以及毫秒级延迟的服务能力。
 
 ## 为什么要选择阿里云表格储存
 
-表格储存给我的项目开发带来了非常多好处，我不需要关心与自己操作无关的问题了，例如可用性、访问安全、鉴权，并且使用非常灵活，可无限拓展，还有非常重要的两点：快、便宜；
+表格储存让我不需要关心运维层面的问题：可靠、安全、快速、价格实惠，并且非常灵活，无限无缝拓展；
 
 > 引用官方，上面有更全面的说明：[产品优势](https://help.aliyun.com/document_detail/27282.html)
 
