@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/boizz/tablestore.svg?branch=master)](https://travis-ci.org/boizz/tablestore)
+[![Coverage Status](https://coveralls.io/repos/github/boizz/tablestore/badge.svg?branch=master)](https://coveralls.io/github/boizz/tablestore?branch=master)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fboizz%2Ftablestore.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fboizz%2Ftablestore?ref=badge_shield)
+[![NPM Package](https://img.shields.io/npm/v/tablestore-js.svg?style=flat-square)](https://www.npmjs.org/package/tablestore-js)
+[![NPM Downloads](https://img.shields.io/npm/dm/tablestore-js.svg?style=flat-square)](https://npmjs.org/package/tablestore-js)
+
 ## 什么是表格存储
 
 表格存储（Table Store）是阿里云自研的 NoSQL 多模型数据库，提供海量结构化数据存储以及快速的查询和分析服务。表格存储的分布式存储和强大的索引引擎能够支持PB级存储、千万 TPS 以及毫秒级延迟的服务能力。
@@ -31,7 +37,7 @@ const res = await tj.row('sampleTable')
     col5: 123456789,
   });
 
-// Bool search
+// Nested search
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -364,6 +370,8 @@ const res = await tj.batch.getRange({
 ##### TermQuery
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -378,6 +386,8 @@ const res = await tj.search(TABLE_NAME)
 ##### TermsQuery
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -394,6 +404,8 @@ res = await tj.search(TABLE_NAME)
 ##### MatchAllQuery
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -407,6 +419,8 @@ const res = await tj.search(TABLE_NAME)
 ##### MatchQuery
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -421,6 +435,8 @@ const res = await tj.search(TABLE_NAME)
 ##### MatchPhraseQuery
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -435,6 +451,8 @@ const res = await tj.search(TABLE_NAME)
 #### 前缀查询
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -449,6 +467,8 @@ const res = await tj.search(TABLE_NAME)
 #### 范围查询
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -468,6 +488,8 @@ const res = await tj.search(TABLE_NAME)
 #### 通配符查询
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -484,6 +506,8 @@ const res = await tj.search(TABLE_NAME)
 ##### GeoBoundingBoxQuery
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -501,6 +525,8 @@ const res = await tj.search(TABLE_NAME)
 ##### GeoDistanceQuery
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -518,6 +544,8 @@ const res = await tj.search(TABLE_NAME)
 ##### GeoPolygonQuery
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -534,6 +562,8 @@ const res = await tj.search(TABLE_NAME)
 #### 嵌套类型查询
 
 ``` js
+const { QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -548,6 +578,8 @@ const res = await tj.search(TABLE_NAME)
 #### 多条件组合查询
 
 ``` js
+const { BoolQueryType, QueryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
@@ -578,43 +610,51 @@ const res = await tj.search(TABLE_NAME)
 ###### ScoreSort
 
 ``` js
+const { SortOrder } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
-+  .scoreSort(SortOrder.ASC)
+  .scoreSort(SortOrder.ASC)
   .query();
 ```
 
 ###### PrimaryKeySort
 
 ``` js
+const { SortOrder } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
-+  .primaryKeySort(SortOrder.DESC)
+  .primaryKeySort(SortOrder.DESC)
   .query();
 ```
 
 ###### FieldSort
 
 ``` js
+const { SortOrder } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
-+  .fieldSort({
-+    Col_Keyword: SortOrder.DESC,
-+    Col_Long: SortOrder.DESC,
-+  })
+  .fieldSort({
+    Col_Keyword: SortOrder.DESC,
+    Col_Long: SortOrder.DESC,
+  })
   .query();
 ```
 
 ###### GeoDistanceSort
 
 ``` js
+const { SortOrder } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
-+  .geoDistanceSort({
-+    fieldName: 'Col_Geo_Point',
-+    points: ['0,0'],
-+    order: SortOrder.ASC,
-+  })
+  .geoDistanceSort({
+    fieldName: 'Col_Geo_Point',
+    points: ['0,0'],
+    order: SortOrder.ASC,
+  })
   .query();
 ```
 
@@ -623,6 +663,8 @@ const res = await tj.search(TABLE_NAME)
 ###### 使用 limit 和 offset
 
 ``` js
+const { queryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(90)
@@ -635,6 +677,8 @@ const res = await tj.search(TABLE_NAME)
 ###### 使用 token 进行翻页
 
 ``` js
+const { queryType } = require('tablestore-js');
+
 const res = await tj.search(TABLE_NAME)
   .indexName(INDEX_NAME)
   .offset(0)
