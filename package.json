@@ -9,10 +9,16 @@
   },
   "keywords": [
     "aliyun",
+    "aliyun-ots",
     "tablestore",
-    "javascript"
+    "javascript",
+    "nodejs"
   ],
   "author": "Aron <bon.hoo@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boizz/tablestore.git"
+  },
   "license": "MIT",
   "dependencies": {
     "tablestore": "^4.3.2"
