@@ -10,3 +10,5 @@ exports.QueryType = require('./lib/const/queryType');
 exports.ReturnType = require('./lib/const/returnType');
 exports.RowExistenceExpectation = require('./lib/const/rowExistenceExpectation');
 exports.SortOrder = require('./lib/const/sortOrder');
+
+exports.Transform = require('./lib/utils/dataTransform');

@@ -62,11 +62,12 @@ const res = await tj.search(TABLE_NAME)
 
 1. 使用 **JSDoc** 注释规范维护代码；
 
-2. 在 **getRow** 和 **search** 方法上，返回的数据新增 data 字段，改字段由 **row** 或 **rows** 生成：
+2. 在 **getRow**、**search**、**batchGetRow** 和 **getRange** 方法上，返回的数据新增 **data** 字段，该字段由 **row** 或 **rows** 生成：
 
-  - 将数据转换为 **key:value** 的格式
+  - 将数据转换为 **key:value** 的格式；
   - 将 **Int64 对象类型**转换为 **Number 类型**；
   - 将 **Nested 字符串**通过 **JSON.parse** 转换成**对象**；
+  - 生成 **data** 的过程不改变其他任何字段；
 
 3. 与 **primaryKey**, **attributeColumns** 相关的传入都使用 **key:value** 方式传入，不用区分 **primaryKey**, **attributeColumns**；
 
